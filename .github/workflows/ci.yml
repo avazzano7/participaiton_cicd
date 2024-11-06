@@ -1,0 +1,27 @@
+name: Hello CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+  
+      - name: Print Hello Message
+        run: echo "Hello, CI!"
+
+      - name: Compile C++ Code
+        run: |
+          g++ -o output main.cpp
+          echo "C++ file compiled successfully!"
+          
+        
