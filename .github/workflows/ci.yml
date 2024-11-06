@@ -23,5 +23,11 @@ jobs:
         run: |
           g++ -o output main.cpp
           echo "C++ file compiled successfully!"
-          
+      
+      - name: Archive Executable
+        uses: actions/upload-artifact@v3
+        with:
+          name: output
+          path: ./output
+
         
